@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="">
+
+<head>
+    <title>抢红包，赢好礼</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--<link rel="icon" type="image/png" href="i/favicon.png">-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web Starter Kit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI Sfavicon.pngtarter Kit">
+    <meta name="msapplication-TileImage" content="/Assets/amaziui/i/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link href="css/block.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/redpackagegame.css?t=20160614" />
+</head>
+<body>
+    <audio id="god-audio1" src="./audio/god.mp3"></audio>
+    <audio id="god-audio2" src="./audio/god.mp3"></audio>
+    <audio id="bomb-audio1" src="./audio/bomb.wav"></audio>
+    <audio id="bomb-audio2" src="./audio/bomb.wav"></audio>
+    <div class="game-default">
+        <img id="start" class="game-start-btn" src="img/a1.png" />
+        <div class="aplish-container">
+            <div class="aplish-main">
+                <ul>
+                    <li>Loading...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main" id="main">
+        <div class="container" id="container"></div>
+        <img class="rbg-footer" src="img/m.png" />
+        <!--<div class="score-container">
+            <label class="score" id="score">0</label><br/>
+            <label id="credit-name">粉丝豆</label>
+        </div>-->
+    </div>
+    
+    <script src="../scripts/jquery/jquery-1.11.2.min.js"></script>
+    <script src="js/Block.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var oContainer = document.getElementById('container');
+            var block = new Block(oContainer);
+            block.init();
+            $("#start").click(function () {
+                $('.main').css('visibility', 'visible');
+                $('.game-default').hide();
+                block.start();
+            });
+        });
+    </script>
+</body>
+
+</html>

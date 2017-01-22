@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70D4AE41-B6E0-4AD0-A429-B9D1804D66FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkData.EF.Domain</RootNamespace>
+    <AssemblyName>WorkData.EF.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.5.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbEntity.cs" />
+    <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\Content.cs" />
+    <Compile Include="Entity\ContentDescriptionField.cs" />
+    <Compile Include="Entity\ContentDoubleField.cs" />
+    <Compile Include="Entity\ContentIntField.cs" />
+    <Compile Include="Entity\ContentStringField.cs" />
+    <Compile Include="Entity\ContentTextField.cs" />
+    <Compile Include="Entity\ContentTimeField.cs" />
+    <Compile Include="Entity\Model.cs" />
+    <Compile Include="Entity\ModelField.cs" />
+    <Compile Include="Entity\MySql\MySqlUser.cs" />
+    <Compile Include="Entity\Operation.cs" />
+    <Compile Include="Entity\Resource.cs" />
+    <Compile Include="Entity\Role.cs" />
+    <Compile Include="Entity\URTU\UrtuUser.cs" />
+    <Compile Include="Entity\User.cs" />
+    <Compile Include="Entity\Wechat\ActivityCategory.cs" />
+    <Compile Include="Mapping\CategoryMap.cs" />
+    <Compile Include="Mapping\ContentMap.cs" />
+    <Compile Include="Mapping\ContentDescriptionFieldMap.cs" />
+    <Compile Include="Mapping\ContentDoubleFieldMap.cs" />
+    <Compile Include="Mapping\ContentIntFieldMap.cs" />
+    <Compile Include="Mapping\ContentStringFieldMap.cs" />
+    <Compile Include="Mapping\ContentTextFieldMap.cs" />
+    <Compile Include="Mapping\ContentTimeFieldMap.cs" />
+    <Compile Include="Mapping\ModelMap.cs" />
+    <Compile Include="Mapping\ModelFieldMap.cs" />
+    <Compile Include="Mapping\MySql\MySqlUserMap.cs" />
+    <Compile Include="Mapping\OperationMap.cs" />
+    <Compile Include="Mapping\ResourceMap.cs" />
+    <Compile Include="Mapping\RoleMap.cs" />
+    <Compile Include="Mapping\URTU\UrtuUserMap.cs" />
+    <Compile Include="Mapping\UserMap.cs" />
+    <Compile Include="Mapping\Wechat\ActivityCategoryMap.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WorkData.Infrastructure\WorkData.Infrastructure.csproj">
+      <Project>{D85F978C-0532-4BFB-9B23-1E4C7F802BDB}</Project>
+      <Name>WorkData.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.configbak" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

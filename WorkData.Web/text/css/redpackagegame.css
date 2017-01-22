@@ -1,0 +1,214 @@
+﻿body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.game-default {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/a.jpg') no-repeat;
+    background-size: 100% 100%;
+    z-index: 100;
+}
+
+.game-start-btn {
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    left: 30%;
+}
+
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/start.jpg') no-repeat;
+    background-size: 100% 100%;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.ph-main {
+    background: url('../img/start.jpg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.container {
+    width: 100%;
+    position: absolute;
+    top: -80px;
+    bottom: 0;
+}
+
+.rbg-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+.score-container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 10%;
+    font-size: 14px;
+}
+
+.score {
+    font-size: 18px;
+    color: #B72441;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(800px);
+    }
+}
+
+@-moz-keyframes move /* Firefox */
+{
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(800px);
+    }
+}
+
+@-webkit-keyframes move /* Safari 和 Chrome */
+{
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(800px);
+    }
+}
+
+@-o-keyframes move /* Opera */
+{
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(800px);
+    }
+}
+
+.rb-cell-default {
+    animation-name: move;
+    animation-duration: 9s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    /* Firefox: */
+    -moz-animation-name: move;
+    -moz-animation-duration: 9s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-play-state: running;
+    -moz-animation-fill-mode: forwards;
+    /* Safari 和 Chrome: */
+    -webkit-animation-name: move;
+    -webkit-animation-duration: 9s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+    -webkit-animation-fill-mode: forwards;
+    /* Opera: */
+    -o-animation-name: move;
+    -o-animation-duration: 9s;
+    -o-animation-timing-function: ease;
+    -o-animation-iteration-count: 1;
+    -o-animation-play-state: running;
+    -o-animation-fill-mode: forwards;
+}
+
+.rb-cell-fast {
+    animation-name: move;
+    animation-duration: 6s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    /* Firefox: */
+    -moz-animation-name: move;
+    -moz-animation-duration: 6s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-play-state: running;
+    -moz-animation-fill-mode: forwards;
+    /* Safari 和 Chrome: */
+    -webkit-animation-name: move;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+    -webkit-animation-fill-mode: forwards;
+    /* Opera: */
+    -o-animation-name: move;
+    -o-animation-duration: 6s;
+    -o-animation-timing-function: ease;
+    -o-animation-iteration-count: 1;
+    -o-animation-play-state: running;
+    -o-animation-fill-mode: forwards;
+}
+
+#gameover {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    background: url('../img/gameover.png') no-repeat;
+    background-size: 75%;
+    background-position-x: center;
+    top: 80px;
+    height: 500px;
+    padding-top: 60%;
+}
+
+.orage {
+    color: orange;
+    font-size: 18px;
+}
+
+.aplish-container {
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+}
+
+.aplish-main {
+    margin: 0 auto;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    overflow: hidden;
+    background: #F4A000;
+    width: 70%;
+    border-radius: .5rem;
+    color: white;
+    font-size: 1.3rem;
+}
+
+    .aplish-main ul {
+        padding-left: 0 !important;
+    }

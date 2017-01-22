@@ -1,0 +1,75 @@
+﻿@using System.Configuration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>微信数据导出</title>
+    @Html.Partial("StaticResource")
+    <script type="text/javascript">
+        $(function () {
+            //初始化表单验证
+            $("#form1").initValidform();
+        });
+    </script>
+</head>
+<body class="mainbody">
+    <form id="form1" action="~/Admin/WechatActivity/Save" method="post">
+        @Html.AntiForgeryToken()
+        <!--导航栏-->
+        <div class="location">
+            <i class="arrow"></i>
+            <span>数据导出</span>
+        </div>
+        <div class="line10"></div>
+        <!--/导航栏-->
+        <!--内容-->
+        <div id="floatHead" class="content-tab-wrap">
+            <div class="content-tab">
+                <div class="content-tab-ul-wrap">
+                    <ul>
+                        <li><a class="selected" href="javascript:;">基本信息</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content">
+            <dl>
+                <dt>数据库</dt>
+                <dd>
+                    <div class="rule-single-select">
+                        <select name="ConStrName">
+                            @foreach (ConnectionStringSettings connectionStringSettings in ConfigurationManager.ConnectionStrings)
+                            {
+                                <option value="@connectionStringSettings.Name">@connectionStringSettings.Name</option>
+                            }
+                        </select>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>查询Sql</dt>
+                <dd>
+                    <textarea name="sql">
+                        
+                    </textarea>
+                    <span class="Validform_checktip">*此项为必填</span>
+                </dd>
+            </dl>
+        </div>
+        <!--/内容-->
+        <!--工具栏-->
+        <div class="page-footer">
+            <div class="btn-wrap">
+                <input type="submit" name="btnSubmit"value="导出" id="btnSubmit" class="btn" />
+            </div>
+        </div>
+        <!--/工具栏-->
+    </form>
+</body>
+</html>
